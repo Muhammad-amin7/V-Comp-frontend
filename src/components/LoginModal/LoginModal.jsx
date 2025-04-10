@@ -2,6 +2,7 @@ import './LoginModal.scss'
 // import PropTypes from 'prop-types';
 import Login from './Login/Login';
 import SignUp from './Sign Up/SignUp';
+import PropTypes from 'prop-types';
 
 
 export default function LoginModal({ login, setLogin }) {
@@ -14,3 +15,10 @@ export default function LoginModal({ login, setLogin }) {
 }
 
 
+LoginModal.propTypes = {
+      login: PropTypes.oneOfType([
+            PropTypes.string.isRequired,
+            PropTypes.bool.isRequired
+      ]),
+      setLogin: PropTypes.func.isRequired
+}

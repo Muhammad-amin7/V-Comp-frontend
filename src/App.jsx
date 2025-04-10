@@ -47,6 +47,27 @@ export default function App() {
   // chenge language
   const [language, setLanguage] = useState("ru");
 
+  // auto-login func
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      fetch("http://localhost:3300/auto_login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'Authorization': `Bearer ${token}`,
+        }
+      })
+        .then(res => res.json())
+        .then(res => {
+          if (res.status) {
+            setUserInfo(res.data)
+            setPassRegister(true)
+          }
+        })
+    }
+  }, [])
+
   return (
     <Context.Provider value={{ addedCart, setAddedCart, favoriteProducts, setFavoriteProducts, passRegister, setPassRegister, userInfo, setUserInfo, commentsList, setCommentsList, language, setLanguage }}>
       <Navbar />

@@ -3,6 +3,7 @@ import { FaXmark } from "react-icons/fa6"
 import { Context } from "../../../../Hooks/Context"
 import { FaStar } from "react-icons/fa"
 import PropTypes from "prop-types"
+import Login from "../../../LoginModal/Login/Login"
 
 export default function AddComment({ active, setActive }) {
       // stars clicked curent
@@ -10,25 +11,28 @@ export default function AddComment({ active, setActive }) {
       // stars hover curent
       const [starHover, setStarHover] = useState()
       //  User info context
-      const { userInfo, setCommentsList, commentsList } = useContext(Context)
+      const { userInfo, setCommentsList, commentsList, passRegister } = useContext(Context)
+      // 
+      // const [toggleLogin, setToggleLogin] = useState(false)
+
       // new comment data obj
       const [newCommentData, setNewCommentData] = useState({
-            userName: userInfo.find(item => item.name === "Email")?.value || "",
+            userName: userInfo?.name || "",
             pros: "",
             cons: "",
             comment: "",
-            id: commentsList.length ,
+            id: commentsList.length,
             like: 0,
             data: "01.01.01",
             stars: starCurrent,
-            photo: userInfo.find(item => item.name === "photo")?.value || ""
+            photo: userInfo?.photo || ""
       })
 
       const handleNewComment = (e) => {
             e.preventDefault()
             setCommentsList(prev => [...prev, newCommentData])
             setNewCommentData({
-                  userName: userInfo.find(item => item.name === "Email")?.value || "",
+                  userName: userInfo?.name || "",
                   pros: "",
                   cons: "",
                   comment: "",
@@ -36,13 +40,14 @@ export default function AddComment({ active, setActive }) {
                   like: 0,
                   data: "01.01.01",
                   stars: starCurrent,
-                  photo: userInfo.find(item => item.name === "photo")?.value || ""
+                  photo: userInfo?.photo || ""
             })
             setActive(false)
       }
 
       return (
             <div className="newCommentsModal" style={{ display: active ? "flex" : "none" }}>
+                  {passRegister ? <Login /> : null}
                   <div className="content">
                         <div className="head">
                               <p>Написать отзыв</p>
@@ -62,9 +67,9 @@ export default function AddComment({ active, setActive }) {
                         </div>
 
                         <form action="">
-                              <input type="text" placeholder="Имя" value={userInfo.find(item => item.name === "Имя")?.value || ""} />
+                              <input type="text" placeholder="Имя" value={userInfo?.name || ""} />
 
-                              <input type="text" placeholder="Email" value={userInfo.find(item => item.name === "Email")?.value || ""} />
+                              <input type="text" placeholder="Email" value={userInfo?.email || ""} />
 
                               <input type="text" placeholder="Достоинства"
                                     onChange={(e) => setNewCommentData(prev => ({ ...prev, pros: e.target.value }))}

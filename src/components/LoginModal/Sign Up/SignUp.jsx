@@ -3,7 +3,6 @@ import { FaEye, FaEyeSlash, FaFacebookF, FaGoogle, FaXmark } from 'react-icons/f
 import Errors from '../Errors/Errors';
 import PropTypes from 'prop-types';
 import { Context } from '../../../Hooks/Context';
-// import UserInfo from '../../../pages/personal accaunt/additions/User Info/UserInfo';
 
 export default function SignUp({ login, setLogin }) {
       const form = useRef(null);
