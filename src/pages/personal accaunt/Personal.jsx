@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap'
-import Menus from './additions/menus/menus'
 import './Personal.scss'
+import Menus from './additions/menus/menus'
 
 export default function Personal() {
       return (
