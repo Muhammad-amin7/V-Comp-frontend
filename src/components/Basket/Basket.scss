@@ -1,0 +1,226 @@
+.basket {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      .content {
+            background: white;
+            padding: 0 24px;
+            max-width: 1100px;
+            max-height: 90%;
+            overflow-y: scroll;
+            width: 100%;
+            height: 100%;
+            display: block;
+      }
+
+      .head {
+            position: sticky;
+            top: 0;
+            padding: 20px 0;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            z-index: 11;
+
+            h1 {
+                  font-family: 'Lato', sans-serif;
+                  font-weight: 600;
+                  font-size: 18px;
+                  line-height: 24px;
+                  letter-spacing: 0%;
+                  color: #060F42;
+            }
+
+            svg {
+                  font-size: 20px;
+                  color: #E93232;
+
+                  &:hover {
+                        opacity: 0.8;
+                  }
+
+            }
+      }
+
+      .allPrice {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            position: sticky;
+            bottom: 0;
+            background: white;
+            padding: 20px 0;
+
+            button {
+                  font-family: 'Lato', sans-serif;
+                  font-weight: 600;
+                  font-size: 18px;
+                  line-height: 24px;
+                  letter-spacing: 0%;
+                  color: #01579B;
+                  border: 2px solid #01579B;
+                  border-radius: 4px;
+                  padding: 9px 12px;
+            }
+
+            .right {
+                  display: flex;
+                  align-items: center;
+                  gap: 30px;
+
+                  p {
+                        margin: 0;
+                        padding: 0;
+                        font-family: 'Lato', sans-serif;
+                        font-weight: 700;
+                        font-size: 28px;
+                        line-height: 24px;
+                        letter-spacing: 0%;
+                        text-align: center;
+                        color: #060F42;
+                  }
+
+                  button {
+                        padding: 15px 12px;
+                        background: #06A56C;
+                        font-size: 12px;
+                        line-height: 12px;
+                        font-weight: 700;
+                        border: none;
+                        color: white;
+
+                        &:hover {
+                              opacity: 0.9;
+                        }
+
+                        &.disabled {
+                              background: #333;
+                              color: #999;
+
+                              &:hover {
+                                    opacity: 1;
+                              }
+                        }
+                  }
+            }
+      }
+
+      h2 {
+            margin-top: 20px;
+            font-family: 'Lato' sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 32px;
+            letter-spacing: 0%;
+            color: #333;
+            margin-bottom: 14px;
+      }
+
+      .topProducts {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+      }
+
+      .products {
+            .noProduct {
+                  padding: 0;
+                  margin: 0;
+                  color: #E93232;
+                  font-weight: 700;
+                  text-align: center;
+                  font-size: 25px;
+                  padding: 20px 0;
+            }
+
+            .product {
+                  display: grid;
+                  grid-template-columns: 1fr 5fr 2fr 1.5fr 0.5fr;
+                  align-items: center;
+                  justify-content: space-between;
+
+                  img {
+                        width: 70px;
+                        aspect-ratio: 1 / 1;
+                  }
+
+                  svg {
+                        transition: 100ms linear;
+
+                        &:hover {
+                              color: #E93232;
+                              opacity: 0.9;
+                        }
+                  }
+            }
+      }
+
+      .count {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            button {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  background: #E5E5E580;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  svg {
+                        color: #01579B;
+                        border: none;
+                        font-size: 14px;
+                        margin: 0;
+                        padding: 0;
+                  }
+            }
+
+            span {
+                  font-family: 'Lato', sans-serif;
+                  font-weight: 700;
+                  font-size: 18px;
+                  line-height: 24px;
+                  letter-spacing: 0%;
+                  color: #333;
+                  padding: 8px 16px;
+                  border-radius: 4px;
+                  border: 1px solid #E6E6E6;
+            }
+      }
+}
+
+@media (max-width:991px) {
+      .basket {
+            .content {
+                  width: 100%;
+                  height: 100%;
+                  max-width: 100%;
+                  max-height: 100%;
+
+                  .products {
+                        .product {
+                              p {
+                                    font-size: 12px;
+                              }
+                        }
+                  }
+            }
+      }
+}
+
+@media (max-width:576px) {}

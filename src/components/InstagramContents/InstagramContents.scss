@@ -1,0 +1,44 @@
+.instagramContents {
+      .content {
+            width: 100%;
+            padding: 8px;
+            box-shadow: 0px 2px 10px 0px #32324724;
+            background: #fff;
+
+            img {
+                  width: 100%;
+                  height: auto;
+                  object-fit: cover;
+                  aspect-ratio: 1/1;
+            }
+      }
+}
+
+@media (max-width:1199px) {
+      .instagramContents {
+            .content {
+                  img {
+                        margin-top: 10px;
+                        aspect-ratio: unset !important;
+                        height: auto;
+                        object-fit: cover;
+                        width: 100%;
+                  }
+            }
+      }
+}
+
+@media (max-width:575px) {
+      .instagramContents {
+            .content {
+
+                  img {
+                        margin-top: 10px;
+                        aspect-ratio: unset !important;
+                        height: 70px;
+                        object-fit: cover;
+                        width: 100%;
+                  }
+            }
+      }
+}

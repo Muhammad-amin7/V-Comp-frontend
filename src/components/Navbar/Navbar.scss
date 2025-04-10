@@ -1,0 +1,203 @@
+nav {
+      .nav-top {
+            background: #060F42;
+            padding: 12px 0;
+            margin-bottom: 100px;
+
+            button.btn-leftMenu {
+                  background: transparent;
+
+                  svg {
+                        font-size: 20px;
+                        color: #F4F8FB;
+                  }
+            }
+
+            ul {
+                  display: flex;
+                  align-items: center;
+                  gap: 24px;
+                  margin: 0;
+                  padding: 0;
+
+                  li {
+                        a {
+                              font-size: 10px;
+                              line-height: 12px;
+                              letter-spacing: 0%;
+                              font-weight: 500;
+                              font-family: var(--Lato);
+                              color: #F4F8FB;
+                              text-decoration: none;
+                        }
+
+                        &:hover {
+                              opacity: 0.8;
+                        }
+                  }
+            }
+
+            .change-language {
+                  display: flex;
+                  color: white;
+                  gap: 4px;
+                  cursor: pointer;
+
+                  button {
+                        font-family: var(--Lato);
+                        font-weight: 500;
+                        font-size: 10px;
+                        line-height: 12px;
+                        letter-spacing: 0%;
+                        color: #F4F8FB;
+                        text-transform: uppercase;
+
+                        &.active {
+                              opacity: 0.3;
+                        }
+                  }
+            }
+
+            .btn-login {
+                  font-size: 24px;
+                  color: #F4F8FB;
+            }
+      }
+
+      .nav-bottom {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            z-index: 6;
+            background: white;
+            padding: 25px 0;
+            box-shadow: 0px 4px 4px 0px #0000000F;
+            transition: 400ms linear;
+
+            .btn-CatalogModal {
+                  padding: 9px 12px;
+                  border-radius: 4px;
+                  background: #06A56C;
+                  font-family: 'Lato', sans-serif;
+                  font-weight: 700;
+                  font-size: 12px;
+                  line-height: 12px;
+                  letter-spacing: 0%;
+                  color: white;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-transform: uppercase;
+
+                  img {
+                        margin-left: 8px;
+                  }
+            }
+
+            .nav-icons {
+                  display: flex;
+                  gap: 17px;
+                  align-items: center;
+                  margin: 0;
+                  padding: 0;
+                  border-left: 2px solid #060F42;
+                  padding-left: 20px;
+
+                  li {
+                        position: relative;
+
+                        span.count {
+                              position: absolute;
+                              top: -10px;
+                              right: -10px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              border-radius: 50%;
+                              width: 20px;
+                              height: 20px;
+                              background: #06A56C;
+                              padding-bottom: 1px;
+                              color: white;
+                              font-family: 'Lato', sans-serif;
+                              font-weight: 900;
+                              font-size: 10px;
+                              line-height: 8px;
+                              letter-spacing: 0%;
+                              text-transform: uppercase;
+                        }
+                  }
+
+                  svg {
+                        font-size: 30px;
+                        color: #060F42;
+
+                        &:hover {
+                              color: black;
+                        }
+                  }
+            }
+      }
+}
+
+@media (max-width:991px) {
+      nav {
+            .nav-bottom {
+                  .btn-CatalogModal {
+                        font-size: 10px;
+
+                        svg {
+                              font-size: 20px;
+                        }
+                  }
+            }
+      }
+}
+
+@media (max-width:767px) {
+      nav {
+            .nav-bottom {
+
+                  .nav-icons {
+                        border: none;
+
+                        svg {
+                              font-size: 20px;
+                        }
+                  }
+            }
+      }
+}
+
+@media (max-width:575px) {
+      nav {
+            .nav-bottom {
+                  background: #060F42;
+                  padding: 10px 0;
+
+                  .nav-icons {
+                        margin: 0;
+                        padding: 0;
+
+                        svg {
+                              font-size: 20px;
+                              color: white;
+                        }
+                  }
+
+                  .btn-CatalogModal {
+                        background: transparent;
+
+                        svg {
+                              font-size: 20px;
+                        }
+                  }
+
+                  button svg {
+                        color: white;
+                        font-size: 20px;
+                  }
+            }
+      }
+}

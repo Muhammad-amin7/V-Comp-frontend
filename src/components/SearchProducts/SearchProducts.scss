@@ -1,0 +1,143 @@
+.navSearch {
+      position: relative;
+      display: flex;
+
+      .searchResult {
+            position: absolute;
+            top: 170%;
+            width: 150%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 4px 16px 0px #3232470D,
+                  0px 4px 16px 4px #32324726;
+            border-radius: 8px;
+            padding: 10px;
+            background: white;
+
+
+            .item {
+                  display: grid;
+                  grid-template-columns: 8fr 1fr;
+                  align-items: center;
+                  justify-content: space-between;
+                  background: white;
+                  padding: 10px 5px;
+                  border-bottom: 1px solid #F4F8FB;
+                  cursor: default;
+
+                  &:hover {
+                        background: #F4F8FB;
+                  }
+
+                  .left {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        cursor: pointer;
+
+                        img {
+                              width: 50px;
+                              height: 50px;
+                        }
+
+                        h4 {
+                              font-size: 14px;
+                              line-height: 14px;
+                              font-weight: 500;
+                        }
+                  }
+
+                  button {
+                        padding: 10px 12px;
+                        border-radius: 4px;
+                        background: #06A56C;
+                        color: white;
+                        font-family: 'Lato', sans-serif;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 12px;
+                        letter-spacing: 0%;
+                  }
+            }
+      }
+
+      form.searchProduct {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            z-index: 77;
+
+            input {
+                  border-radius: 4px 0 0 4px;
+                  border: 1px solid #E6E6E6;
+                  font-family: 'Lato', sans-serif;
+                  font-weight: 700;
+                  font-size: 12px;
+                  line-height: 16px;
+                  letter-spacing: 0%;
+                  vertical-align: middle;
+                  padding: 13px;
+                  outline: unset;
+                  color: #222;
+                  width: 100%;
+
+                  &::placeholder {
+                        color: #e5e5e5;
+                  }
+            }
+
+            button {
+                  border-radius: 0px 4px 4px 0px;
+                  background: #01579B;
+                  padding: 11px 14px;
+                  font-size: 14px;
+                  color: white;
+
+
+                  &.clear {
+                        background: #E93232;
+                        opacity: 0.9;
+
+                        &:hover {
+                              opacity: 1;
+                        }
+                  }
+            }
+      }
+}
+
+@media (max-width:575px) {
+      .navSearch {
+            form.searchProduct {
+                  button {
+                        background: transparent;
+                        border: none;
+                        color: white;
+                        font-size: 20px;
+                        padding: 0;
+                        margin: 0;
+                        margin-top: -5px;
+                  }
+            }
+
+            .searchResult {
+                  position: fixed;
+                  top: 150px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 90%;
+
+                  form {
+                        display: flex;
+
+                        button {
+                              background: #01579B;
+                              color: white;
+                              padding: 11px 14px;
+                              font-size: 14px;
+                        }
+                  }
+            }
+      }
+}

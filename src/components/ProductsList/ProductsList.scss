@@ -1,0 +1,28 @@
+.productsList {
+      margin: 50px 0;
+
+      .btnAllProducts {
+            display: block;
+            margin: 27px 0;
+            margin-left: auto;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 14px;
+            letter-spacing: 2%;
+            color: #01579B;
+      }
+}
+
+@media (max-width:576px) {
+      .productsList {
+            margin: 20px 0;
+
+            .btnAllProducts {
+                  margin: 10px 0;
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin-left: auto;
+            }
+      }
+}

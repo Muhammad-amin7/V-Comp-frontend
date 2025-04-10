@@ -1,0 +1,183 @@
+header {
+      margin-top: 30px;
+
+      .catalogs {
+            margin: 0;
+            padding: 0;
+
+            li {
+                  display: grid;
+                  grid-template-columns: 2fr 10fr 1fr;
+                  box-shadow: 0px 1px 0px 0px #0000000A;
+                  padding: 14px;
+                  font-size: 16px;
+                  line-height: 20px;
+                  cursor: pointer;
+
+                  &:hover {
+                        background: #F4F8FB;
+                  }
+            }
+      }
+
+      .slider {
+            position: relative;
+
+            img {
+                  width: 100%;
+                  height: 400px;
+            }
+
+      }
+
+      .slick-slider {
+            ul.slick-dots {
+                  bottom: 40px;
+                  left: 40px;
+                  width: fit-content;
+
+                  li {
+
+                        button::before {
+                              color: white;
+                              font-size: 10px;
+                              opacity: 100%;
+                        }
+
+                        &.slick-active button::before {
+                              color: #01579B;
+                        }
+                  }
+            }
+
+            .slick-arrow {
+                  display: none !important;
+            }
+      }
+
+      .smallIcons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 30px;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                  width: 0px;
+            }
+
+            div {
+                  display: block;
+                  text-align: center;
+                  width: 110px;
+                  height: 110px;
+            }
+
+            span {
+                  display: block;
+                  font-family: 'Lato', sans-serif;
+                  font-weight: 700;
+                  font-size: 12px;
+                  line-height: 12px;
+                  letter-spacing: 0%;
+                  text-align: center;
+                  color: #060F42;
+            }
+      }
+}
+
+@media (max-width:1199px) {
+      header {
+            .catalogs {
+                  li {
+                        font-size: 14px;
+                        line-height: 18px;
+                  }
+            }
+
+            .smallIcons {
+                  span {
+                        font-size: 10px;
+                  }
+            }
+      }
+}
+
+@media (max-width:991px) {
+      header {
+            .slider {
+                  h1 {
+                        font-size: 40px;
+                  }
+
+                  p {
+                        top: 90px;
+                  }
+
+                  button {
+                        top: 160px;
+                  }
+
+                  img {
+                        height: 300px;
+                  }
+            }
+      }
+}
+
+@media (max-width:767px) {
+      header {
+
+            .slider {
+                  img {
+                        height: 250px;
+                  }
+
+                  button {
+                        top: 120px;
+                        right: 16px;
+                        left: unset;
+                        padding: 13px 15px;
+                        font-size: 10px;
+                        line-height: 10px;
+                        text-align: center;
+                        width: 121px;
+                  }
+            }
+
+            .slick-slider {
+                  ul.slick-dots {
+                        bottom: 12px;
+                        right: 16px;
+                        left: unset;
+                  }
+            }
+      }
+}
+
+@media (max-width:575px) {
+      header {
+            margin-top: 0;
+
+            .slider {
+                  img {
+                        height: 200px;
+                  }
+
+            }
+
+            .smallIcons {
+                  gap: 10px;
+                  display: grid;
+                  grid-template-columns: repeat(7, minmax(80px, 100px));
+                  grid-template-rows: minmax(80px, 100px);
+                  gap: 30px;
+                  margin-top: 20px;
+
+                  div {
+                        width: 80px;
+                        height: 80px;
+                  }
+            }
+      }
+}

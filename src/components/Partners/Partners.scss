@@ -1,0 +1,26 @@
+.partners {
+      margin-top: 50px;
+
+      h1 {
+            margin-bottom: 30px;
+      }
+
+      img {
+            margin-right: 50px;
+            filter: brightness(0.7);
+
+            &:hover {
+                  filter: brightness(1);
+            }
+      }
+}
+
+@media (max-width:576px) {
+      .partners {
+            margin-top: 20px;
+
+            img {
+                  filter: brightness(1);
+            }
+      }
+}

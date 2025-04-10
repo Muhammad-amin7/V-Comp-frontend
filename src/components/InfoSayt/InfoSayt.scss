@@ -1,0 +1,40 @@
+.infoSayt {
+      margin-top: 100px;
+
+      h1 {
+            margin-bottom: 24px;
+      }
+
+      p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0%;
+            color: #333;
+            text-align: justify;
+      }
+}
+
+@media (max-width:1200px) {
+      .infoSayt {
+            p {
+                  font-size: 14px;
+                  line-height: 18px;
+            }
+      }
+}
+
+@media (max-width:575px) {
+      .infoSayt {
+            margin-top: 30px;
+
+            h1{
+                  font-size: 17px !important;
+            }
+
+            p {
+                  font-size: 10px;
+                  line-height: 14px;
+            }
+      }
+}

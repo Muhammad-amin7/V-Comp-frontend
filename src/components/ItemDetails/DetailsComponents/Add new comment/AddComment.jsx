@@ -1,0 +1,98 @@
+import { useContext, useState } from "react"
+import { FaXmark } from "react-icons/fa6"
+import { Context } from "../../../../Hooks/Context"
+import { FaStar } from "react-icons/fa"
+import PropTypes from "prop-types"
+
+export default function AddComment({ active, setActive }) {
+      // stars clicked curent
+      const [starCurrent, setStarCurrent] = useState()
+      // stars hover curent
+      const [starHover, setStarHover] = useState()
+      //  User info context
+      const { userInfo, setCommentsList, commentsList } = useContext(Context)
+      // new comment data obj
+      const [newCommentData, setNewCommentData] = useState({
+            userName: userInfo.find(item => item.name === "Email")?.value || "",
+            pros: "",
+            cons: "",
+            comment: "",
+            id: commentsList.length ,
+            like: 0,
+            data: "01.01.01",
+            stars: starCurrent,
+            photo: userInfo.find(item => item.name === "photo")?.value || ""
+      })
+
+      const handleNewComment = (e) => {
+            e.preventDefault()
+            setCommentsList(prev => [...prev, newCommentData])
+            setNewCommentData({
+                  userName: userInfo.find(item => item.name === "Email")?.value || "",
+                  pros: "",
+                  cons: "",
+                  comment: "",
+                  id: 30,
+                  like: 0,
+                  data: "01.01.01",
+                  stars: starCurrent,
+                  photo: userInfo.find(item => item.name === "photo")?.value || ""
+            })
+            setActive(false)
+      }
+
+      return (
+            <div className="newCommentsModal" style={{ display: active ? "flex" : "none" }}>
+                  <div className="content">
+                        <div className="head">
+                              <p>Написать отзыв</p>
+                              <FaXmark onClick={() => setActive(false)} />
+                        </div>
+
+                        <div className="stars">
+                              {Array(5).fill(null).map((_, index) => {
+                                    return <span key={index} className={index <= starHover ? "hover" : ""}>
+                                          <FaStar
+                                                onMouseEnter={() => setStarHover(index)}
+                                                onMouseLeave={() => setStarHover(-1)}
+                                                onClick={() => { setStarCurrent(index); setNewCommentData(prev => ({ ...prev, stars: index + 1 })) }}
+                                                className={index <= starCurrent ? "active" : ""} />
+                                    </span>
+                              })}
+                        </div>
+
+                        <form action="">
+                              <input type="text" placeholder="Имя" value={userInfo.find(item => item.name === "Имя")?.value || ""} />
+
+                              <input type="text" placeholder="Email" value={userInfo.find(item => item.name === "Email")?.value || ""} />
+
+                              <input type="text" placeholder="Достоинства"
+                                    onChange={(e) => setNewCommentData(prev => ({ ...prev, pros: e.target.value }))}
+                                    value={newCommentData.pros} />
+
+                              <input type="text" placeholder="Недостатки"
+                                    onChange={(e) => setNewCommentData(prev => ({ ...prev, cons: e.target.value }))}
+                                    value={newCommentData.cons} />
+                              <input type="text" placeholder="Комментарий"
+                                    onChange={(e) => setNewCommentData(prev => ({ ...prev, comment: e.target.value }))}
+                                    value={newCommentData.comment} />
+                              <div className="checkBox">
+                                    <input type="checkbox" />
+                                    <label htmlFor="">Уведомлять об ответах по электронной почте</label>
+                              </div>
+                        </form>
+
+                        <div className="foot">
+                              <button className="cencel" onClick={() => setActive(false)}>ОТМЕНИТЬ</button>
+                              <button onClick={(e) => handleNewComment(e)}>ДОБАВИТЬ ОТЗЫВ</button>
+                        </div>
+                  </div>
+            </div>
+      )
+}
+
+
+AddComment.propTypes = {
+      active: PropTypes.bool.isRequired,
+      setActive: PropTypes.func.isRequired
+}

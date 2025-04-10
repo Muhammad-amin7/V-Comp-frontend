@@ -1,0 +1,51 @@
+.personal .menus {
+      display: block;
+
+      h1.subTitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 24px;
+            letter-spacing: 0%;
+            color: #060F42;
+            margin-bottom: 30px;
+      }
+
+      ul {
+            position: sticky;
+            top: 100px;
+            transition: all 0.3s ease-in-out;
+
+            li {
+                  display: grid;
+                  grid-template-columns: 32px auto;
+                  gap: 24px;
+                  align-items: center;
+                  margin: 0;
+                  padding: 0;
+                  border-bottom: 1px solid rgb(215, 221, 226, .7);
+                  color: #060F42;
+                  font-family: 'Lato', sans-serif;
+                  font-weight: 500;
+                  font-size: 16px;
+                  line-height: 20px;
+                  letter-spacing: 0%;
+                  padding: 16px;
+                  cursor: pointer;
+                  transition: 100ms linear;
+
+                  &:hover {
+                        padding-left: 20px;
+                  }
+
+                  svg {
+                        font-size: 24px;
+                  }
+
+                  &.active {
+                        background: #F4F8FB;
+                        color: #01579B;
+                  }
+            }
+      }
+}
